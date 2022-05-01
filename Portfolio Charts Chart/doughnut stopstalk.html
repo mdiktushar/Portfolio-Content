@@ -1,0 +1,60 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<div class="chart-container" style="position: relative; height:100vh; width:100vw">
+    <canvas id="myChart"></canvas>
+</div>
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Accepted', 'Wrong Answer', 'Time Limit Exceeded', 'Runtime Error', 'Compile Error', 'Others'],
+        datasets: [{
+            label: 'Total Submissions',
+            data: [664, 343, 57, 17, 17, 2],
+            backgroundColor: [
+                '#4CAF50',
+                '#F44336',
+                '#3F51B5',
+                '#9C27B0',
+                '#FF9800',
+                '#9E9E9E'
+                
+            ],
+            borderColor: [
+                '#4CAF50',
+                '#F44336',
+                '#3F51B5',
+                '#9C27B0',
+                '#FF9800',
+                '#9E9E9E'
+            ],
+            borderWidth: 1,
+            // borderColor:
+            borderPadding: 1, 
+            hoverBorderWidth: 5,
+            // hoverBorderColor:
+
+
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Total Submissions',
+                font: {
+                        size: 25
+                    },
+                padding: {
+                    top: 30,
+                    bottom: -100
+                }
+            },
+            legend: {
+                display: true,
+                position: 'right',
+            }
+        }
+    }
+});
+</script>
